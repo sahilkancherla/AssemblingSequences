@@ -1,4 +1,0 @@
-f = open("puzzle.txt","r")
-given = f.read()
-res = given.split(",")
-print(res[0])
