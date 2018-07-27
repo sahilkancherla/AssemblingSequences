@@ -1,0 +1,55 @@
+f = open("puzzle.txt","r")
+given = f.read()
+res = given.replace(",", "").replace("\n", " ").split(" ") 
+ 
+
+key_size = int(input("Please enter a key size"))
+print("The key size is:",key_size)
+
+
+message = ""
+message = message + res[0]
+print(message)
+boolean1 = False
+
+def find_str(full, sub):
+        return full.find(sub)
+        
+while boolean1 == False:
+  t = 0
+  check = 0
+  for all in res:
+    word = res[t]
+    key = message[-(key_size):]
+    if key in word and word.endswith(key) == False:
+      message = message + word[find_str(word, key)+key_size:len(word)]
+      print (message)
+    else:
+      check += 1
+    t += 1
+    if check == len(res):
+      boolean1 = True
+      
+print ("hello1")
+boolean2 = False
+while boolean2 == False:
+  t = 0
+  check = 0
+  for all in res:
+    word = res[t]
+    key = message[0:key_size]
+    if key in word and word.startswith(key) == False:
+      message = word[0:find_str(word,key)] + message
+      print (message)
+    else:
+      check += 1
+    t += 1
+    if check == len(res):
+      boolean2 = True
+  
+
+  
+print("hello2")
+
+
+

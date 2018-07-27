@@ -1,0 +1,14 @@
+startingSequence = "SKDTHDDELPSYEDVIKEEERLQSQPPRPPRPAANLAQGHQSRPHQRPSTMPATSSSQTYAHSHSYTPTSSQPRPPPRPQQNPSLPWTYPPRFYCSKCGNTGYKLKNGRSCKSCWRRFAPQNNVVSAPTYYTNYTMPVYTNAWQGNRPLYVQPGDPRLGGVLCGECRGSGRTRFLLDEDICPLCHGVGRIITQPQRY"
+f = open("puzzle2.txt","r")
+given = f.read()
+res = given.split(",")
+check = 0
+for all in res:
+	if all in startingSequence:
+		check += 1
+if check == len(res):
+	print("Done")
+else:
+	print("Not done")	
+
+
